@@ -72,7 +72,7 @@ To test the semantic caching in action, use the provided FastAPI example applica
 
     The API documentation will be available at `http://localhost:8000/docs`.
 
-3.  **Test the API** by sending two queries that are semantically similar but phrased differently (e.g., "best rain cloud" and "cloud producing most precipitation") and observe the difference in latency to confirm the cache hit.
+3.  **Test the API** by sending two queries that are semantically similar but phrased differently (e.g., "best rain cloud" and "which cloud is best for rain") and observe the difference in latency to confirm the cache hit.
 
 ## 🔮 Future Extensions
 
@@ -82,4 +82,5 @@ To test the semantic caching in action, use the provided FastAPI example applica
 | **External API Clients** | **Scope:** Enable seamless deployment to major cloud services. **How:** Create dedicated client classes (e.g., `OpenAIClient`, `GeminiClient`) implementing the unified `AbstractLLMClient` interface. | 
 | **Custom Embedding Models** | **Scope:** Decouple embedding generation from the Ollama LLM call for fine-grained control and performance. **How:** Integrate the `Sentence Transformers` library and allow configuration of local embedding models within the `SemanticCacheUtility`. | 
 | **Time-to-Live (TTL)** | **Scope:** Prevent the application from returning stale information. **How:** Implement cache expiration logic to check timestamps on cached entries and automatically force a cache miss if the entry is older than a configurable `ttl_seconds`. |
+
 
