@@ -35,6 +35,7 @@ pip install semantiker
 
 # 2. Install dependencies for the FastAPI Test Application
 pip install fastapi uvicorn pydantic
+```
 
 
 ## 🛑 Current Limitations (V1.0)
@@ -81,3 +82,4 @@ To test the semantic caching in action, use the provided FastAPI example applica
 | **External API Clients** | **Scope:** Enable seamless deployment to major cloud services. **How:** Create dedicated client classes (e.g., `OpenAIClient`, `GeminiClient`) implementing the unified `AbstractLLMClient` interface. | 
 | **Custom Embedding Models** | **Scope:** Decouple embedding generation from the Ollama LLM call for fine-grained control and performance. **How:** Integrate the `Sentence Transformers` library and allow configuration of local embedding models within the `SemanticCacheUtility`. | 
 | **Time-to-Live (TTL)** | **Scope:** Prevent the application from returning stale information. **How:** Implement cache expiration logic to check timestamps on cached entries and automatically force a cache miss if the entry is older than a configurable `ttl_seconds`. |
+
